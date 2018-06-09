@@ -4,7 +4,7 @@ class Factory
   def self.new(*args, &block)
     const = args[0]
     if const.class == String
-      return raise NameError, "identifier #{const} needs to be constant" if const[/^[[:upper:]]/].nil?
+      raise NameError, "identifier #{const} needs to be constant" if const[/^[[:upper:]]/].nil?
       args.delete_at(0)
     else
       const = nil
